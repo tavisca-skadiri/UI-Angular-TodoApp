@@ -1,0 +1,32 @@
+<div class="tabs">
+    <ul>
+        <li><a (click)="loadTab('todo')">Todo</a></li>
+        <li><a (click)="loadTab('profile')">Profile</a></li>
+        <li><a (click)="loadTab('settings')">Settings</a></li>
+    </ul>
+    <div>
+        <article [style.display]="isTodoVisible ? 'block' : 'none'">
+            <todotab></todotab>
+        </article>
+        <article [style.display]="isProfileVisible ? 'block' : 'none'">
+            <h3>Profile</h3>
+            <hr/>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>			
+        </article>
+        <article [style.display]="isSettingsVisible ? 'block' : 'none'">
+            <h3>Settings</h3>
+            <hr/>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </article>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+.tabs ul{
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  list-style-type: none;
+  float: left;
+  width: 180px;
+}
+.tabs{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.tabs li{
+  margin-bottom: 3px;
+  text-align: left;
+}
+.tabs li:hover a{
+  background-color: lavender;
+  color: black;
+}
+.tabs li a{
+  display: block;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 4%;
+  border-radius: 9px;
+  background-color: #6b5d96;
+}
+.tabs div{
+    display: block;
+    background: #efefef;
+    float:left;
+    width:70%;
+    min-height: 400px;
+    padding: 30px;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+.tabs div article{
+    color: #000;
+    font-size:18px;   
+}
