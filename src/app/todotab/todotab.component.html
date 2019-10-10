@@ -1,8 +1,17 @@
-<h3>Todo List<button >Add</button>
-<input type="text" list="todo-datalist" id="todo-name" placeholder="Search. . .">
-</h3><hr/>
-<datalist id="todo-datalist">
-</datalist>
+<h3>Todo List
+    <button (click)="addTodo()">Add</button>
+    <input type="text" class="todoname" list="todo-datalist" placeholder="Search. . ." [(ngModel)]="newtodoname"/>
+</h3>
+<hr/>
 <table id="todo-list">
     <th>Todo Name</th><th colspan="2">Actions</th>
+    <tr *ngFor="let todo of todoArray;let i = index">
+        <td> {{todo}} </td>
+        <td>
+            <input type="button" value="Edit" (click)="editTodo(i)"/>
+        </td>
+        <td>
+            <input type="button" value="Delete" (click)="deleteTodo(i)"/>
+        </td>
+    </tr>
 </table>
