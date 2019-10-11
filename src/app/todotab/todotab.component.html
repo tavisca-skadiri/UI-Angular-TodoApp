@@ -5,13 +5,13 @@
 <hr/>
 <table id="todo-list">
     <th>Todo Name</th><th colspan="2">Actions</th>
-    <tr *ngFor="let todo of todoArray;let i = index">
-        <td> {{todo}} </td>
+    <tr *ngFor="let todo of todoArray;">
+        <td> {{todo.todoname}} </td>
         <td>
-            <input type="button" value="Edit" (click)="editTodo(i)"/>
+            <input type="button" value="Edit" (click)="editTodo(todo.todoid)"/>
         </td>
         <td>
-            <input type="button" value="Delete" (click)="deleteTodo(i)"/>
+            <input type="button" value="Delete" (click)="deleteTodo(todo.todoid)"/>
         </td>
     </tr>
 </table>

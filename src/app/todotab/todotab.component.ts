@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'todotab',
@@ -7,19 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodotabComponent implements OnInit {
   newtodoname: any = "";
-  private todoArray: Array<any> = ["Eat","Sleep","Dance","Study","Repeat"];
-  constructor() { }
-  ngOnInit() {  }
+  private todoArray: Array<any> = [];
 
-  addTodo() {
-      this.todoArray.push(this.newtodoname);
-      this.newtodoname = "";
+  constructor(private _todoService:TodoService) { }
+  
+  ngOnInit() {
+    this.getTodos();
   }
-  editTodo(i:number) {
-    this.todoArray[i] = this.newtodoname;
+  
+  getTodos(){
+    this._todoService.getTodos().subscribe(data => this.todoArray = data.todos);
+  }
+  
+  addTodo() {
+    this._todoService.addTodo(this.newtodoname).subscribe(()=>this.getTodos());
     this.newtodoname = "";
   }
+  
+  editTodo(i:number) {
+    var val = prompt("Enter new Todo value");
+    this._todoService.updateTodo(val,i).subscribe(()=>this.getTodos());
+  }
+  
   deleteTodo(i:number) {
-      this.todoArray.splice(i, 1);
+    this._todoService.deleteTodo(i).subscribe(()=>this.getTodos());
   }
 }
